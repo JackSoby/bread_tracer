@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :elm_spa,
-  ecto_repos: [ElmSpa.Repo]
+config :phoenix_elm_boilerplate,
+  ecto_repos: [PhoenixElmBoilerplate.Repo]
 
 # Configures the endpoint
-config :elm_spa, ElmSpaWeb.Endpoint,
+config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "FNtUVMqvh29RQXN2pJZr6/u8dNq7JT0oo53PANMfz67UgB0Jf2JzH2zaP8KzU2LH",
-  render_errors: [view: ElmSpaWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: ElmSpa.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: PhoenixElmBoilerplateWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: PhoenixElmBoilerplate.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -2,7 +2,7 @@ use Mix.Config
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :elm_spa, ElmSpaWeb.Endpoint,
+config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
   http: [port: 4002],
   server: false
 
@@ -10,9 +10,9 @@ config :elm_spa, ElmSpaWeb.Endpoint,
 config :logger, level: :warn
 
 # Configure your database
-config :elm_spa, ElmSpa.Repo,
+config :phoenix_elm_boilerplate, PhoenixElmBoilerplate.Repo,
   username: "postgres",
   password: "postgres",
-  database: "elm_spa_test",
+  database: "phoenix_elm_boilerplate_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox

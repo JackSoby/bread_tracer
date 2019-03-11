@@ -1,5 +1,5 @@
-defmodule ElmSpaWeb.Router do
-  use ElmSpaWeb, :router
+defmodule PhoenixElmBoilerplateWeb.Router do
+  use PhoenixElmBoilerplateWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule ElmSpaWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", ElmSpaWeb do
+  scope "/", PhoenixElmBoilerplateWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ElmSpaWeb do
+  # scope "/api", PhoenixElmBoilerplateWeb do
   #   pipe_through :api
   # end
 end

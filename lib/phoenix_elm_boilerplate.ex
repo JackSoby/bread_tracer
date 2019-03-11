@@ -1,6 +1,6 @@
-defmodule ElmSpa do
+defmodule PhoenixElmBoilerplate do
   @moduledoc """
-  ElmSpa keeps the contexts that define your domain
+  PhoenixElmBoilerplate keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

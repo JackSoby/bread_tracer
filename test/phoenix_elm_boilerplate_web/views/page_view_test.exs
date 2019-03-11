@@ -1,3 +1,3 @@
-defmodule ElmSpaWeb.PageViewTest do
-  use ElmSpaWeb.ConnCase, async: true
+defmodule PhoenixElmBoilerplateWeb.PageViewTest do
+  use PhoenixElmBoilerplateWeb.ConnCase, async: true
 end

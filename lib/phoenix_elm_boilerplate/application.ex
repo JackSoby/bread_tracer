@@ -1,4 +1,4 @@
-defmodule ElmSpa.Application do
+defmodule PhoenixElmBoilerplate.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,23 +9,23 @@ defmodule ElmSpa.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      ElmSpa.Repo,
+      PhoenixElmBoilerplate.Repo,
       # Start the endpoint when the application starts
-      ElmSpaWeb.Endpoint
-      # Starts a worker by calling: ElmSpa.Worker.start_link(arg)
-      # {ElmSpa.Worker, arg},
+      PhoenixElmBoilerplateWeb.Endpoint
+      # Starts a worker by calling: PhoenixElmBoilerplate.Worker.start_link(arg)
+      # {PhoenixElmBoilerplate.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: ElmSpa.Supervisor]
+    opts = [strategy: :one_for_one, name: PhoenixElmBoilerplate.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    ElmSpaWeb.Endpoint.config_change(changed, removed)
+    PhoenixElmBoilerplateWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

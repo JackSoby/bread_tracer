@@ -1,7 +1,7 @@
-defmodule ElmSpaWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :elm_spa
+defmodule PhoenixElmBoilerplateWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :phoenix_elm_boilerplate
 
-  socket "/socket", ElmSpaWeb.UserSocket,
+  socket "/socket", PhoenixElmBoilerplateWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule ElmSpaWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :elm_spa,
+    from: :phoenix_elm_boilerplate,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -42,5 +42,5 @@ defmodule ElmSpaWeb.Endpoint do
     key: "_elm_spa_key",
     signing_salt: "dh+Ylhwx"
 
-  plug ElmSpaWeb.Router
+  plug PhoenixElmBoilerplateWeb.Router
 end
