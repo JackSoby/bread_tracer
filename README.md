@@ -1,4 +1,4 @@
-# PhoenixElmBoilerplate
+# BreadTracer
 
 To start your Phoenix server:
 

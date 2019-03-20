@@ -1,5 +1,5 @@
-defmodule PhoenixElmBoilerplateWeb.ErrorView do
-  use PhoenixElmBoilerplateWeb, :view
+defmodule BreadTracerWeb.ErrorView do
+  use BreadTracerWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

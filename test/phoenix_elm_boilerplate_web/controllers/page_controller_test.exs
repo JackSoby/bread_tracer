@@ -1,5 +1,5 @@
-defmodule PhoenixElmBoilerplateWeb.PageControllerTest do
-  use PhoenixElmBoilerplateWeb.ConnCase
+defmodule BreadTracerWeb.PageControllerTest do
+  use BreadTracerWeb.ConnCase
 
   test "GET /", %{conn: conn} do
     conn = get(conn, "/")

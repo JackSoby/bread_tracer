@@ -1,5 +1,5 @@
-defmodule PhoenixElmBoilerplateWeb.Router do
-  use PhoenixElmBoilerplateWeb, :router
+defmodule BreadTracerWeb.Router do
+  use BreadTracerWeb, :router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -13,14 +13,14 @@ defmodule PhoenixElmBoilerplateWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/", PhoenixElmBoilerplateWeb do
+  scope "/", BreadTracerWeb do
     pipe_through :browser
 
     get "/", PageController, :index
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixElmBoilerplateWeb do
+  # scope "/api", BreadTracerWeb do
   #   pipe_through :api
   # end
 end

@@ -1,7 +1,7 @@
-defmodule PhoenixElmBoilerplateWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :phoenix_elm_boilerplate
+defmodule BreadTracerWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :bread_tracer
 
-  socket "/socket", PhoenixElmBoilerplateWeb.UserSocket,
+  socket "/socket", BreadTracerWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule PhoenixElmBoilerplateWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :phoenix_elm_boilerplate,
+    from: :bread_tracer,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -42,5 +42,5 @@ defmodule PhoenixElmBoilerplateWeb.Endpoint do
     key: "_elm_spa_key",
     signing_salt: "dh+Ylhwx"
 
-  plug PhoenixElmBoilerplateWeb.Router
+  plug BreadTracerWeb.Router
 end

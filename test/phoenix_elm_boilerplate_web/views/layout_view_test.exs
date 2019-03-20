@@ -1,3 +1,3 @@
-defmodule PhoenixElmBoilerplateWeb.LayoutViewTest do
-  use PhoenixElmBoilerplateWeb.ConnCase, async: true
+defmodule BreadTracerWeb.LayoutViewTest do
+  use BreadTracerWeb.ConnCase, async: true
 end

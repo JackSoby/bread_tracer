@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(PhoenixElmBoilerplate.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(BreadTracer.Repo, :manual)

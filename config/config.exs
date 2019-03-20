@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :phoenix_elm_boilerplate,
-  ecto_repos: [PhoenixElmBoilerplate.Repo]
+config :bread_tracer,
+  ecto_repos: [BreadTracer.Repo]
 
 # Configures the endpoint
-config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
+config :bread_tracer, BreadTracerWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "FNtUVMqvh29RQXN2pJZr6/u8dNq7JT0oo53PANMfz67UgB0Jf2JzH2zaP8KzU2LH",
-  render_errors: [view: PhoenixElmBoilerplateWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: PhoenixElmBoilerplate.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: BreadTracerWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: BreadTracer.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

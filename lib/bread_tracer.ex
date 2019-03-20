@@ -1,6 +1,6 @@
-defmodule PhoenixElmBoilerplate do
+defmodule BreadTracer do
   @moduledoc """
-  PhoenixElmBoilerplate keeps the contexts that define your domain
+  BreadTracer keeps the contexts that define your domain
   and business logic.
 
   Contexts are also responsible for managing your data, regardless

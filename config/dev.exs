@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
+config :bread_tracer, BreadTracerWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -46,13 +46,13 @@ config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :phoenix_elm_boilerplate, PhoenixElmBoilerplateWeb.Endpoint,
+config :bread_tracer, BreadTracerWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/phoenix_elm_boilerplate_web/views/.*(ex)$},
-      ~r{lib/phoenix_elm_boilerplate_web/templates/.*(eex)$}
+      ~r{lib/bread_tracer_web/views/.*(ex)$},
+      ~r{lib/bread_tracer_web/templates/.*(eex)$}
     ]
   ]
 
@@ -67,9 +67,9 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
-config :phoenix_elm_boilerplate, PhoenixElmBoilerplate.Repo,
+config :bread_tracer, BreadTracer.Repo,
   username: "postgres",
   password: "postgres",
-  database: "phoenix_elm_boilerplate_dev",
+  database: "bread_tracer_dev",
   hostname: "localhost",
   pool_size: 10
