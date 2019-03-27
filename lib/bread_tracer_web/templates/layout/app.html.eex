@@ -7,10 +7,15 @@
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
-    <div id="elm-main"></div>
     <script type="text/javascript" src="<%= Routes.static_url(@conn, "/js/app.js") %>"></script>
-    <main role="main" class="container">
-    </main>
+	  <main id="main" role="main">
+			<div class="container">
+				<div id="content" class="py-5">
+					<%= render @view_module, @view_template, assigns %>
+				</div>
+			</div>
+		</main>
+
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>
