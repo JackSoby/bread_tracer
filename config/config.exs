@@ -25,6 +25,11 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :bread_tracer, BreadTracer.Auth.Guardian,
+  issuer: "bread_tracer",
+  # put the result of the mix command above here
+  secret_key: "MhPWQtDhqD7KSWdrEy0ngyhwHDA45+oUvstdmPv8g2c2NNxvmFY0jzNRMf1vDXBt"
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
