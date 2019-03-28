@@ -1,5 +1,7 @@
 defmodule BreadTracerWeb.Router do
   use BreadTracerWeb, :router
+  alias BreadTracer.Auth.Pipeline
+  import Guardian.Plug.EnsureAuthenticated
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -20,7 +22,7 @@ defmodule BreadTracerWeb.Router do
 
   # We use ensure_auth to fail if there is no one logged in
   pipeline :ensure_auth do
-    plug Guardian.Plug.EnsureAuthenticated
+    plug(Guardian.Plug.EnsureAuthenticated)
   end
 
   # Maybe logged in routes
@@ -38,7 +40,7 @@ defmodule BreadTracerWeb.Router do
   scope "/", BreadTracerWeb do
     pipe_through [:browser, :auth, :ensure_auth]
 
-    get "/secret", PageController, :secret
+    get "/secret", SessionController, :secret
   end
 
   # Other scopes may use custom stacks.

@@ -15,7 +15,9 @@ defmodule BreadTracerWeb.SessionController do
   end
 
   def login(conn, %{"user" => %{"username" => username, "password" => password}}) do
-    Auth.authenticate_user(username, password)
+    result = Auth.authenticate_user(username, password)
+
+    result
     |> login_reply(conn)
   end
 
@@ -26,9 +28,12 @@ defmodule BreadTracerWeb.SessionController do
   end
 
   defp login_reply({:ok, user}, conn) do
-    conn
-    |> put_flash(:success, "Welcome back!")
-    |> Guardian.Plug.sign_in(user)
+    result =
+      conn
+      |> put_flash(:success, "Welcome back!")
+      |> Guardian.Plug.sign_in(user)
+
+    result
     |> redirect(to: "/secret")
   end
 

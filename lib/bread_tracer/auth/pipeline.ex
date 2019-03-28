@@ -1,6 +1,6 @@
 defmodule BreadTracer.Auth.Pipeline do
   use Guardian.Plug.Pipeline,
-    otp_app: :auth_me,
+    otp_app: :bread_tracer,
     error_handler: BreadTracer.Auth.ErrorHandler,
     module: BreadTracer.Auth.Guardian
 
