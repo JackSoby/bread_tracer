@@ -20,7 +20,7 @@ defmodule BreadTracer.MixProject do
   def application do
     [
       mod: {BreadTracer.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :scrivener_ecto, :runtime_tools]
     ]
   end
 
@@ -45,7 +45,15 @@ defmodule BreadTracer.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:guardian, "~> 1.2"},
       {:comeonin, "~> 5.0"},
-      {:bcrypt_elixir, "~> 2.0"}
+      {:bcrypt_elixir, "~> 2.0"},
+      {:kronky, "~> 0.5.0"},
+      {:dataloader, "~> 1.0.0"},
+      {:absinthe, "~> 1.4"},
+      {:absinthe_plug, "~> 1.4"},
+      {:distillery, "~> 2.0"},
+      {:paper_trail, "~> 0.8"},
+      {:proper_case, "~> 1.0.2"},
+      {:scrivener_ecto, "~> 2.0"}
     ]
   end
 

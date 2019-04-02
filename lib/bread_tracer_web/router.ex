@@ -15,6 +15,10 @@ defmodule BreadTracerWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :graphql do
+    plug(BreadTracerWeb.GraphQL.Context)
+  end
+
   # Our pipeline implements "maybe" authenticated. We'll use the `:ensure_auth` below for when we need to make sure someone is logged in.
   pipeline :auth do
     plug(BreadTracer.Auth.Pipeline)
@@ -34,6 +38,19 @@ defmodule BreadTracerWeb.Router do
     get "/login", SessionController, :new
     post "/login", SessionController, :login
     post "/logout", SessionController, :logout
+  end
+
+  # GraphQL API
+  scope "/graphql" do
+    pipe_through([:auth, :graphql])
+
+    forward("/", Absinthe.Plug, schema: BreadTracerWeb.GraphQL.Schema)
+  end
+
+  # GraphiQL Endpoint
+  scope "/graphiql" do
+    pipe_through([:auth, :graphql])
+    forward("/", Absinthe.Plug.GraphiQL, schema: BreadTracerWeb.GraphQL.Schema, json_codec: Jason)
   end
 
   # Definitely logged in scope
