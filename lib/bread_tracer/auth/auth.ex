@@ -7,6 +7,7 @@ defmodule BreadTracer.Auth do
   alias BreadTracer.Repo
 
   alias BreadTracer.Auth.Schema.User
+  import BreadTracer.Auth.Query
 
   alias Bcrypt
 
@@ -25,6 +26,17 @@ defmodule BreadTracer.Auth do
           {:error, :invalid_credentials}
         end
     end
+  end
+
+  def data() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(User = queryable, params) do
+    queryable
+    |> exclude_roles(params)
+    |> handle_search(params)
+    |> handle_sort(params)
   end
 
   @doc """

@@ -8,6 +8,17 @@ defmodule BreadTracer.MoneyManagement do
 
   alias BreadTracer.MoneyManagement.Schema.Year
   alias BreadTracer.MoneyManagement.Schema.Expense
+  import BreadTracer.MoneyManagement.Query
+
+  def data() do
+    Dataloader.Ecto.new(Repo, query: &query/2)
+  end
+
+  def query(Expense = queryable, params) do
+    queryable
+    |> handle_sort(params)
+    |> handle_search(params)
+  end
 
   @doc """
   Returns the list of expenses.

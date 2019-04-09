@@ -2,7 +2,7 @@ defmodule BreadTracerWeb.GraphQL.Schema do
   use Absinthe.Schema
 
   # App Contexts
-  alias BreadTracer.{Auth, Projects, Proposals}
+  alias BreadTracer.{Auth, MoneyManagement}
 
   import Absinthe.Resolution.Helpers
 
@@ -35,7 +35,7 @@ defmodule BreadTracerWeb.GraphQL.Schema do
     loader =
       Dataloader.new()
       |> Dataloader.add_source(Auth, Auth.data())
-      |> Dataloader.add_source(Projects, Projects.data())
+      |> Dataloader.add_source(MoneyManagement, MoneyManagement.data())
 
     Map.put(ctx, :loader, loader)
   end
