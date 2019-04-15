@@ -15,19 +15,16 @@ defmodule BreadTracerWeb.GraphQL.Schema do
 
   # Types and Fields (e.g. queries and mutations)
   import_types(BreadTracerWeb.GraphQL.Fields.Expense)
-
-  input_object :project_document_input do
-    field(:id, :id)
-    field(:name, :string)
-    field(:url, :string)
-  end
+  import_types(BreadTracerWeb.GraphQL.Fields.Year)
 
   query do
     import_fields(:expense_queries)
+    import_fields(:year_queries)
   end
 
   mutation do
     import_fields(:expense_mutations)
+    import_fields(:year_mutations)
   end
 
   # Context Callbacks

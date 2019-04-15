@@ -75,7 +75,7 @@ defmodule BreadTracerWeb.GraphQL.Fields.Expense do
   #########################
 
   def list_expenses(_parent, args, _resolution) do
-    {:ok, MoneyManagement.list_expenses(args)}
+    {:ok, MoneyManagement.list_expenses()}
   end
 
   def get_expense(_parent, %{id: id} = args, _resolution) do
